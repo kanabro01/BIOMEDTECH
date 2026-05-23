@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BIOMEDTECH — Ассоциация биомедицинских инженеров и техников Кыргызстана</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #0f3b5c;
+            --primary-dark: #082a41;
+            --accent: #2c7da0;
+            --light-bg: #f1f5f9;
+            --white: #ffffff;
+            --gray-text: #475569;
+            --border: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray-text);
+            max-width: 800px;
+            margin: 0 auto 48px auto;
+            font-size: 1.125rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+        }
+        
+        .logo-text-large {
+            background: var(--primary);
+            padding: 8px 18px;
+            border-radius: 14px;
+            letter-spacing: 1px;
+        }
+        .logo-text-large .main {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .logo-text-large .sub {
+            font-size: 0.7rem;
+            color: #cbd5e6;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+        .logo-info {
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            color: var(--primary);
+        }
+        .logo-info span {
+            font-size: 0.75rem;
+            font-weight: normal;
+            display: block;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.7rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #eef2f5 0%, #e2e9f0 100%);
+            padding: 60px 0;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .card i {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            background: white;
+            padding: 28px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s;
+            border: 1px solid var(--border);
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .benefit-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .benefit-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .step {
+            background: white;
+            border-radius: 60px;
+            padding: 16px 28px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            min-width: 200px;
+        }
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 2;
+        }
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Стили для раздела Устав */
+        .charter-section {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 32px;
+            margin-top: 40px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .charter-section h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--accent);
+            padding-left: 16px;
+        }
+        .charter-section h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin: 20px 0 12px 0;
+        }
+        .charter-section p {
+            margin-bottom: 12px;
+        }
+        .charter-list {
+            list-style: none;
+            margin: 12px 0 12px 20px;
+        }
+        .charter-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .charter-list li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .legal-list {
+            list-style: none;
+            margin: 12px 0;
+        }
+        .legal-list li {
+            margin-bottom: 8px;
+        }
+
+        .legal-box {
+            flex: 1.2;
+            background: var(--white);
+            border-radius: 28px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .legal-box h3 {
+            color: var(--primary);
+            margin-bottom: 16px;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+        }
+        .legal-item {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .legal-item strong {
+            color: var(--primary);
+        }
+        .certificate-link {
+            margin-top: 20px;
+            background: #f0f7fc;
+            padding: 12px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .certificate-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 30px;
+        }
+        .partner-card {
+            background: white;
+            padding: 20px 28px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: 0.2s;
+            width: 240px;
+            border: 1px solid var(--border);
+        }
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .partner-card a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            display: block;
+        }
+        .partner-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+        .contact-info i {
+            width: 32px;
+            color: var(--accent);
+            margin-right: 12px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            font-family: inherit;
+        }
+        footer {
+            background: var(--primary-dark);
+            color: #cbd5e1;
+            padding: 48px 0 24px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                margin-top: 20px;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 50px 0;
+            }
+            .logo-text-large .main {
+                font-size: 1.3rem;
+            }
+            .step {
+                width: 100%;
+            }
+            .charter-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="logo">
+                <div class="logo-text-large">
+                    <div class="main">BIOMEDTECH</div>
+                    <div class="sub">АССОЦИАЦИЯ</div>
+                </div>
+                <div class="logo-info">
+                    Общество биомедицинских<br>
+                    <span>инженеров и техников Кыргызстана</span>
+                </div>
+            </a>
+            <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">Об ассоциации</a></li>
+                <li><a href="#charter">Устав</a></li>
+                <li><a href="#benefits">Преимущества</a></li>
+                <li><a href="#activities">Деятельность</a></li>
+                <li><a href="#partners">Партнёры</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Единая платформа для биомедицинских инженеров и техников Кыргызстана</h1>
+                    <p>Объединяем профессионалов, развиваем стандарты обслуживания медицинского оборудования, повышаем безопасность пациентов.</p>
+                    <a href="#contacts" class="btn">Вступить в ассоциацию</a>
+                </div>
+                <div class="legal-box" style="flex:0.8">
+                    <h3>Статус</h3>
+                    <div class="legal-item"><strong>✅ Официальная регистрация:</strong> 24.03.2023 (перерегистрация 02.04.2026)</div>
+                    <div class="legal-item"><strong>📜 Регистрационный номер:</strong> 216067-3301-00</div>
+                    <div class="legal-item"><strong>🧾 ИНН/ОКПО:</strong> 02403202310283 / 31832438</div>
+                    <div class="legal-item"><strong>👤 Руководитель:</strong> Келдибеков Канат Келдибекович</div>
+                    <div class="certificate-link">📄 <a href="#" id="showCertificateBtn">Посмотреть свидетельство о регистрации</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Об ассоциации</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Общественное объединение "Ассоциация 'Общество биомедицинских инженеров и техников'" (ОО Ассоциация "БИОМЕДТЕК")</strong> создано как самостоятельное профессиональное объединение, действующее на основании собственного устава, зарегистрированного в установленном порядке. В состав учредителей Ассоциации входят 5 учредителей, представляющих сферу биомедицинской инженерии и технического обслуживания медицинского оборудования.</p>
+                    <p>Идея создания Ассоциации заключается в объединении биомедицинских инженеров, техников, специалистов сервисных организаций и компаний, работающих в сфере медицинского оборудования, в единую профессиональную платформу. Такое объединение необходимо для развития сотрудничества между специалистами, обмена практическим опытом, обсуждения актуальных технических и организационных вопросов, а также выработки общих подходов к эксплуатации, сервисному обслуживанию и повышению безопасности медицинской техники, компаний и других участников рынка медицинской техники Кыргызской Республики.</p>
+                    <p>По данным Министерства юстиции Кыргызской Республики, вид деятельности общественного объединения значится как <strong>«прочая деятельность в области образования, не включенная в другие группировки» (ГКЭД 85.59.0)</strong>. Учитывая вышеизложенное, данная организация обладает полным правом осуществлять обучение специалистов в области биоинженерии, проводить курсы повышения квалификации, сертификацию и развивать профессиональные стандарты.</p>
+                    <p><strong>Миссия:</strong> качественная, безопасная и эффективная медицинская техника благодаря компетентности инженерного персонала и внедрению международных подходов к управлению оборудованием.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел Устав (отдельная глава внутри "Об ассоциации") -->
+    <section id="charter">
+        <div class="container">
+            <div class="charter-section">
+                <h3>Устав Общественного объединения «Ассоциация «Общество биомедицинских инженеров и техников»»</h3>
+                
+                <h4>1. Общие положения</h4>
+                <p><strong>1.1.</strong> Общественное объединение «Ассоциация «Общество биомедицинских инженеров и техников»» (далее — «Ассоциация») является добровольным объединением граждан, созданным на основе их общности интересов для реализации уставных целей и задач.</p>
+                <p><strong>1.2.</strong> Ассоциация создана и осуществляет свою деятельность в соответствии с Конституцией Кыргызской Республики, Гражданским кодексом Кыргызской Республики, Законом Кыргызской Республики «О некоммерческих организациях», иными нормативными правовыми актами и настоящим Уставом.</p>
+                <p><strong>1.7.</strong> Ассоциация не преследует цели извлечения прибыли. Средства, полученные Ассоциацией, используются исключительно для достижения уставных целей и не могут распределяться между ее членами.</p>
+                <p><strong>1.8.</strong> Полное наименование Ассоциации на официальном языке: Общественное объединение «Ассоциация «Общество биомедицинских инженеров и техников»». Сокращенное наименование: <strong>ОО Ассоциация «БИОМЕДТЕК»</strong>.</p>
+                <p><strong>1.10.</strong> Юридический адрес Ассоциации: Кыргызская Республика, город Бишкек, Ленинский район, ул. Островского, дом 89.</p>
+
+                <h4>2. Цели и задачи Ассоциации</h4>
+                <p><strong>2.1. Основными целями деятельности Ассоциации являются:</strong></p>
+                <ul class="charter-list">
+                    <li>содействие развитию и совершенствованию сферы биомедицинской инженерии и технического сервиса медицинской техники в Кыргызской Республике;</li>
+                    <li>укрепление профессиональных связей между поколениями инженеров, техников и молодых специалистов;</li>
+                    <li>расширение общественной и государственной поддержки в области высокотехнологичного медицинского обслуживания;</li>
+                    <li>представление и защита прав и законных интересов своих членов в государственных органах и иных организациях.</li>
+                </ul>
+
+                <h4>3. Права и обязанности членов Ассоциации</h4>
+                <p><strong>3.1.</strong> Членами Ассоциации могут быть дееспособные граждане Кыргызской Республики, признающие настоящий Устав и принимающие участие в ее деятельности, в том числе сотрудники образовательных, медицинских и научных учреждений, а также специалисты предприятий и организаций, занимающихся поставкой, обслуживанием и эксплуатацией медицинского оборудования.</p>
+                <p><strong>3.5. Член Ассоциации имеет право:</strong></p>
+                <ul class="charter-list">
+                    <li>избирать и быть избранным в руководящие и контрольно-ревизионные органы Ассоциации;</li>
+                    <li>участвовать в управлении делами Ассоциации;</li>
+                    <li>получать информацию о деятельности Ассоциации, знакомиться с ее документацией;</li>
+                    <li>участвовать во всех мероприятиях, проводимых Ассоциацией;</li>
+                    <li>пользоваться льготами, скидками и услугами, предоставляемыми Ассоциацией для своих членов.</li>
+                </ul>
+                <p><strong>3.6. Член Ассоциации обязан:</strong></p>
+                <ul class="charter-list">
+                    <li>соблюдать положения настоящего Устава и выполнять решения руководящих органов Ассоциации;</li>
+                    <li>своевременно и в установленном порядке уплачивать вступительные, членские и иные целевые взносы;</li>
+                    <li>укреплять авторитет Ассоциации и не допускать действий, наносящих вред ее репутации;</li>
+                    <li>соблюдать нормы профессиональной этики в области биомедицинской инженерии.</li>
+                </ul>
+
+                <h4>4. Порядок приема, выхода и исключения членов</h4>
+                <p><strong>4.2. Порядок приема:</strong> Прием осуществляется Советом Ассоциации на основании письменного заявления. Лицо считается принятым в члены Ассоциации с момента полной уплаты вступительного и первого ежемесячного взносов.</p>
+                <p><strong>4.3. Членские взносы:</strong> Размер вступительного взноса составляет <strong>1000 сомов</strong>. Ежемесячный взнос — <strong>1% от должностного оклада</strong>. Членские взносы являются целевыми средствами и используются исключительно на обеспечение деятельности Ассоциации.</p>
+
+                <h4>5. Органы управления и контроля</h4>
+                <p><strong>5.1. Общее собрание (Конференция)</strong> — высший руководящий орган Ассоциации. Созывается не реже одного раза в 3 года.</p>
+                <p><strong>5.3. Совет Ассоциации</strong> — постоянно действующий коллегиальный руководящий орган. В состав Совета входят: Председатель Ассоциации, Исполнительный секретарь-координатор и его Заместитель.</p>
+                <p><strong>5.4. Председатель Ассоциации</strong> — высшее должностное лицо, осуществляет общее стратегическое руководство, представляет Ассоциацию без доверенности.</p>
+                <p><strong>5.5. Исполнительный секретарь-координатор</strong> осуществляет оперативное управление текущей деятельностью.</p>
+                <p><strong>5.7. Ревизор</strong> осуществляет проверку финансово-хозяйственной деятельности Ассоциации.</p>
+
+                <h4>6. Имущество и источники его формирования</h4>
+                <p><strong>6.2. Источниками формирования имущества Ассоциации являются:</strong> вступительные и регулярные членские взносы; добровольные взносы и пожертвования; гранты; доходы от проведения платных мероприятий (семинаров, конференций, выставок); доходы от предпринимательской деятельности, направляемые на реализацию уставных задач.</p>
+                <p><strong>6.5. Ответственность:</strong> Члены Ассоциации не отвечают по обязательствам Ассоциации, равно как и Ассоциация не несет ответственности по обязательствам своих членов.</p>
+
+                <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);"><strong>Председатель: Келдибеков Канат Келдибекович</strong></p>
+                <p style="font-size: 0.85rem; color: var(--gray-text);">Утвержден Протоколом общего собрания от 3 марта 2026 г. № 2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества членства -->
+    <section id="benefits" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">Преимущества членства</h2>
+            <p class="section-subtitle">Что получают участники ассоциации BIOMEDTECH</p>
+            <div class="benefits-grid">
+                <div class="benefit-item"><i class="fas fa-gavel"></i><h4>Представительство интересов</h4><p>Защита и лоббирование интересов биомедицинских инженеров на уровне государственных органов.</p></div>
+                <div class="benefit-item"><i class="fas fa-newspaper"></i><h4>Информирование</h4><p>Оперативное оповещение об изменениях законодательства, стандартов и нормативных требований.</p></div>
+                <div class="benefit-item"><i class="fas fa-users"></i><h4>Деловые связи</h4><p>Доступ к сообществу профессионалов, поставщиков и заказчиков медицинского оборудования.</p></div>
+                <div class="benefit-item"><i class="fas fa-chart-line"></i><h4>Продвижение бренда</h4><p>Маркетинговая поддержка, публикации, участие в отраслевых мероприятиях.</p></div>
+                <div class="benefit-item"><i class="fas fa-certificate"></i><h4>Электронное удостоверение</h4><p>Цифровое удостоверение члена ассоциации, подтверждающее статус специалиста.</p></div>
+                <div class="benefit-item"><i class="fas fa-headset"></i><h4>Консультационная поддержка</h4><p>Помощь в вопросах сертификации, закупок, эксплуатации и ремонта медтехники.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Деятельность (услуги) -->
+    <section id="activities">
+        <div class="container">
+            <h2 class="section-title">Направления деятельности</h2>
+            <div class="cards-grid">
+                <div class="card"><i class="fas fa-chalkboard-user"></i><h3>Обучение и повышение квалификации</h3><p>Очные и онлайн-курсы для инженеров, техников по эксплуатации и ремонту медтехники. Скидка до 30% для членов ассоциации.</p></div>
+                <div class="card"><i class="fas fa-certificate"></i><h3>Сертификация специалистов</h3><p>Независимая оценка квалификации биомедицинских инженеров и техников, аттестация.</p></div>
+                <div class="card"><i class="fas fa-tools"></i><h3>Разработка стандартов ТО</h3><p>Регламенты технического обслуживания, протоколы безопасности, KPI и нормативная документация.</p></div>
+                <div class="card"><i class="fas fa-handshake"></i><h3>Партнёрство</h3><p>Взаимодействие с производителями, поставщиками, госорганами и сервисными компаниями.</p></div>
+                <div class="card"><i class="fas fa-microscope"></i><h3>Экспертиза и консалтинг</h3><p>Технический аудит медицинского оборудования, помощь в закупках, юридическая поддержка.</p></div>
+                <div class="card"><i class="fas fa-chart-line"></i><h3>Клинический инжиниринг</h3><p>Внедрение систем менеджмента качества, цифровое управление медтехникой (CMMS), мониторинг отказов.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как вступить -->
+    <section id="howtojoin" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">Как вступить в ассоциацию</h2>
+            <div class="steps">
+                <div class="step"><div class="step-number">1</div><div>Подайте письменное заявление в Совет Ассоциации</div></div>
+                <div class="step"><div class="step-number">2</div><div>Оплатите вступительный взнос (1000 сомов)</div></div>
+                <div class="step"><div class="step-number">3</div><div>Оплачивайте ежемесячный членский взнос (1% от оклада)</div></div>
+                <div class="step"><div class="step-number">4</div><div>Получите членский билет и электронное удостоверение</div></div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#contacts" class="btn">Подать заявку сейчас</a>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: var(--gray-text);">По вопросам членства обращайтесь: <strong>+996 709 668 860</strong> (WhatsApp, Telegram)</p>
+        </div>
+    </section>
+
+    <!-- Партнёры -->
+    <section id="partners" style="padding: 50px 0;">
+        <div class="container">
+            <h2 class="section-title">Наши партнёры</h2>
+            <p class="section-subtitle">Сотрудничество с ведущими образовательными, научными центрами и государственными предприятиями</p>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <a href="https://kf.kg/" target="_blank" rel="noopener noreferrer">
+                        <div class="partner-icon"><i class="fas fa-university"></i></div>
+                        <div>ГП "КЫРГЫЗФАРМАЦИЯ"</div>
+                    </a>
+                </div>
+                <div class="partner-card">
+                    <a href="https://kstu.kg/" target="_blank" rel="noopener noreferrer">
+                        <div class="partner-icon"><i class="fas fa-microchip"></i></div>
+                        <div>Кыргызский государственный технический университет (КГТУ)</div>
+                    </a>
+                </div>
+                <div class="partner-card">
+                    <a href="https://www.kgma.kg/ru" target="_blank" rel="noopener noreferrer">
+                        <div class="partner-icon"><i class="fas fa-notes-medical"></i></div>
+                        <div>Кыргызская государственная медицинская академия (КГМА)</div>
+                    </a>
+                </div>
+            </div>
+            <p style="text-align:center; margin-top:40px; color: var(--gray-text);">Сотрудничество с профильными вузами, научными центрами и сервисными компаниями Кыргызстана</p>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты и вступление</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Кыргызская Республика, г. Бишкек, ул. Островского, 89</p>
+                    <p><i class="fas fa-phone-alt"></i> +996 709 668 860</p>
+                    <p><i class="fas fa-envelope"></i> info@biomedtech.kg</p>
+                    <p><i class="fab fa-telegram"></i> t.me/biomedtech_kg</p>
+                    <p style="margin-top: 20px;"><strong>По вопросам членства:</strong><br>Секретарь Ассоциации<br>+996 709 668 860 (WhatsApp, Telegram)<br>info@biomedtech.kg</p>
+                </div>
+                <div>
+                    <form action="#" method="post">
+                        <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
+                        <div class="form-group"><input type="email" placeholder="Email" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Телефон"></div>
+                        <div class="form-group"><textarea rows="3" placeholder="Должность / Организация / Город"></textarea></div>
+                        <button type="submit" class="btn" style="width: 100%;">Отправить заявку на вступление</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<
