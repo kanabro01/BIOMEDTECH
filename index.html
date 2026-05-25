@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>BIOMEDTECH — Ассоциация биомедицинских инженеров и техников Кыргызстана</title>
-    <!-- Font Awesome Icons -->
+    <title>BIOMEDTECH — Курсы повышения квалификации</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -12,7 +11,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background-color: #f8fafc;
@@ -20,7 +18,6 @@
             line-height: 1.5;
             scroll-behavior: smooth;
         }
-
         :root {
             --primary: #0f3b5c;
             --primary-dark: #082a41;
@@ -32,17 +29,8 @@
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 80px 0; }
         .section-title {
             font-size: 2rem;
             font-weight: 700;
@@ -50,7 +38,6 @@
             color: var(--primary);
             text-align: center;
         }
-
         .section-subtitle {
             text-align: center;
             color: var(--gray-text);
@@ -58,7 +45,6 @@
             margin: 0 auto 48px auto;
             font-size: 1.125rem;
         }
-
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -72,12 +58,18 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
-        .btn:hover {
-            background-color: var(--primary);
-            transform: translateY(-2px);
+        .btn-sm {
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.2s;
         }
-
+        .btn-sm:hover, .btn:hover { background-color: var(--primary); transform: translateY(-2px); }
         header {
             background-color: var(--white);
             box-shadow: var(--shadow-sm);
@@ -85,7 +77,6 @@
             top: 0;
             z-index: 50;
         }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -93,14 +84,12 @@
             padding: 18px 0;
             flex-wrap: wrap;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 16px;
             text-decoration: none;
         }
-        
         .logo-text-large {
             background: var(--primary);
             padding: 8px 18px;
@@ -112,7 +101,6 @@
             font-weight: 800;
             color: white;
             line-height: 1.2;
-            font-family: 'Segoe UI', sans-serif;
         }
         .logo-text-large .sub {
             font-size: 0.7rem;
@@ -132,323 +120,67 @@
             display: block;
             color: var(--accent);
         }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #1e293b;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.7rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--primary);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #eef2f5 0%, #e2e9f0 100%);
-            padding: 60px 0;
-        }
-
-        .hero-grid {
-            display: flex;
-            align-items: center;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 32px 24px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-
-        .card i {
-            font-size: 2.8rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 32px;
-            margin-top: 20px;
-        }
-
-        .benefit-item {
-            background: white;
-            padding: 28px 20px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: transform 0.2s;
-            border: 1px solid var(--border);
-        }
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-        .benefit-item i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 16px;
-        }
-        .benefit-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .step {
-            background: white;
-            border-radius: 60px;
-            padding: 16px 28px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            min-width: 200px;
-        }
-        .step-number {
-            background: var(--accent);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .about-content {
-            display: flex;
-            gap: 48px;
-            flex-wrap: wrap;
-        }
-        .about-text {
-            flex: 2;
-        }
-        .about-text p {
-            margin-bottom: 1rem;
-        }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #1e293b; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
+        .menu-toggle { display: none; font-size: 1.7rem; background: none; border: none; cursor: pointer; color: var(--primary); }
         
-        .charter-section {
-            background: var(--white);
-            border-radius: 28px;
-            padding: 32px;
-            margin-top: 40px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-        .charter-section h3 {
-            color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 24px;
-            border-left: 4px solid var(--accent);
-            padding-left: 16px;
-        }
-        .charter-section h4 {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin: 20px 0 12px 0;
-        }
-        .charter-section p {
-            margin-bottom: 12px;
-        }
-        .charter-list {
-            list-style: none;
-            margin: 12px 0 12px 20px;
-        }
-        .charter-list li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-        .charter-list li:before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .legal-box {
-            flex: 1.2;
-            background: var(--white);
-            border-radius: 28px;
+        /* Courses grid */
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px; margin-top: 20px; }
+        .course-card {
+            background: white;
+            border-radius: 24px;
             padding: 24px;
             border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
         }
-        .legal-box h3 {
-            color: var(--primary);
-            margin-bottom: 16px;
-            border-left: 4px solid var(--accent);
-            padding-left: 12px;
-        }
-        .legal-item {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-        .legal-item strong {
-            color: var(--primary);
-        }
-        .certificate-link {
-            margin-top: 20px;
-            background: #f0f7fc;
-            padding: 12px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .certificate-link a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .partners-grid {
+        .course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .course-card h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--primary); }
+        .hours { display: inline-block; background: #e2e9f0; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin: 12px 0; }
+        .price { font-size: 1.3rem; font-weight: 800; color: var(--accent); margin: 12px 0; }
+        
+        /* Filter */
+        .filter-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 32px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-bottom: 40px;
         }
-        .partner-card {
+        .filter-btn {
             background: white;
-            padding: 20px 28px;
-            border-radius: 28px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: 0.2s;
-            width: 240px;
             border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
         }
-        .partner-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        
+        .schedule-list { background: white; border-radius: 28px; padding: 24px; border: 1px solid var(--border); }
+        .schedule-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
         }
-        .partner-card a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            display: block;
-        }
-        .partner-icon {
-            font-size: 3rem;
-            margin-bottom: 12px;
-            color: var(--accent);
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-        .contact-info i {
-            width: 32px;
-            color: var(--accent);
-            margin-right: 12px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            font-family: inherit;
-        }
-        footer {
-            background: var(--primary-dark);
-            color: #cbd5e1;
-            padding: 48px 0 24px;
-            text-align: center;
-        }
+        .teacher-card { text-align: center; background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .contact-info i { width: 32px; color: var(--accent); margin-right: 12px; }
+        .form-group { margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--border); border-radius: 32px; font-family: inherit; }
+        footer { background: var(--primary-dark); color: #cbd5e1; padding: 48px 0 24px; text-align: center; }
+        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-                margin-top: 20px;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            section {
-                padding: 50px 0;
-            }
-            .logo-text-large .main {
-                font-size: 1.3rem;
-            }
-            .step {
-                width: 100%;
-            }
-            .charter-section {
-                padding: 20px;
-            }
+            .nav-links { display: none; width: 100%; flex-direction: column; align-items: center; gap: 16px; margin-top: 20px; }
+            .nav-links.show { display: flex; }
+            .menu-toggle { display: block; }
+            .contact-grid { grid-template-columns: 1fr; }
+            section { padding: 50px 0; }
+            .logo-text-large .main { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -457,24 +189,15 @@
     <div class="container">
         <div class="navbar">
             <a href="#" class="logo">
-                <div class="logo-text-large">
-                    <div class="main">BIOMEDTECH</div>
-                    <div class="sub">АССОЦИАЦИЯ</div>
-                </div>
-                <div class="logo-info">
-                    Общество биомедицинских<br>
-                    <span>инженеров и техников Кыргызстана</span>
-                </div>
+                <div class="logo-text-large"><div class="main">BIOMEDTECH</div><div class="sub">АССОЦИАЦИЯ</div></div>
+                <div class="logo-info">Общество биомедицинских<br><span>инженеров и техников Кыргызстана</span></div>
             </a>
             <button class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#about">Об ассоциации</a></li>
-                <li><a href="#charter">Устав</a></li>
-                <li><a href="#benefits">Преимущества</a></li>
-                <li><a href="#activities">Деятельность</a></li>
-                <li><a href="#courses">Курсы</a></li>
-                <li><a href="#partners">Партнёры</a></li>
+                <li><a href="#courses-section">Курсы</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#teachers">Преподаватели</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
         </div>
@@ -482,219 +205,88 @@
 </header>
 
 <main>
-    <section id="home" class="hero">
+    <section id="home" style="background: linear-gradient(135deg, #eef2f5 0%, #e2e9f0 100%); padding: 60px 0;">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <h1>Единая платформа для биомедицинских инженеров и техников Кыргызстана</h1>
-                    <p>Объединяем профессионалов, развиваем стандарты обслуживания медицинского оборудования, повышаем безопасность пациентов.</p>
-                    <a href="#contacts" class="btn">Вступить в ассоциацию</a>
-                </div>
-                <div class="legal-box" style="flex:0.8">
-                    <h3>Статус</h3>
-                    <div class="legal-item"><strong>✅ Официальная регистрация:</strong> 24.03.2023 (перерегистрация 02.04.2026)</div>
-                    <div class="legal-item"><strong>📜 Регистрационный номер:</strong> 216067-3301-00</div>
-                    <div class="legal-item"><strong>🧾 ИНН/ОКПО:</strong> 02403202310283 / 31832438</div>
-                    <div class="legal-item"><strong>👤 Руководитель:</strong> Келдибеков Канат Келдибекович</div>
-                    <div class="certificate-link">📄 <a href="#" id="showCertificateBtn">Посмотреть свидетельство о регистрации</a></div>
-                </div>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Курсы повышения квалификации</h1>
+                <p style="font-size: 1.2rem;">Для инженеров, техников и специалистов по обслуживанию медицинского оборудования. Официальное удостоверение государственного образца.</p>
+                <a href="#courses-section" class="btn" style="margin-top: 20px;">Выбрать курс</a>
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <section id="courses-section">
         <div class="container">
-            <h2 class="section-title">Об ассоциации</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p><strong>Общественное объединение "Ассоциация 'Общество биомедицинских инженеров и техников'" (ОО Ассоциация "БИОМЕДТЕК")</strong> создано как самостоятельное профессиональное объединение, действующее на основании собственного устава, зарегистрированного в установленном порядке. В состав учредителей Ассоциации входят 5 учредителей, представляющих сферу биомедицинской инженерии и технического обслуживания медицинского оборудования.</p>
-                    <p>Идея создания Ассоциации заключается в объединении биомедицинских инженеров, техников, специалистов сервисных организаций и компаний, работающих в сфере медицинского оборудования, в единую профессиональную платформу. Такое объединение необходимо для развития сотрудничества между специалистами, обмена практическим опытом, обсуждения актуальных технических и организационных вопросов, а также выработки общих подходов к эксплуатации, сервисному обслуживанию и повышению безопасности медицинской техники, компаний и других участников рынка медицинской техники Кыргызской Республики.</p>
-                    <p><strong>Миссия:</strong> качественная, безопасная и эффективная медицинская техника благодаря компетентности инженерного персонала и внедрению международных подходов к управлению оборудованием.</p>
-                </div>
+            <h2 class="section-title">Программы обучения</h2>
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" data-filter="all">Все курсы</button>
+                <button class="filter-btn" data-filter="diagnostics">Лучевая диагностика</button>
+                <button class="filter-btn" data-filter="life">Анестезия / ИВЛ</button>
+                <button class="filter-btn" data-filter="engineering">Инженерия / Стандарты</button>
+                <button class="filter-btn" data-filter="it">PACS / IT / Кибербезопасность</button>
+            </div>
+            <div class="courses-grid" id="coursesContainer"></div>
+        </div>
+    </section>
+
+    <section id="schedule" style="background: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title">Ближайшие потоки</h2>
+            <div class="schedule-list">
+                <div class="schedule-item"><span><strong>Радиология и дозиметрия</strong> (40 ч)</span><span>Старт: 10 июня 2026</span><a href="#contacts" class="btn-sm">Записаться</a></div>
+                <div class="schedule-item"><span><strong>Анестезиология и реанимационное оборудование</strong> (72 ч)</span><span>Старт: 15 июня 2026</span><a href="#contacts" class="btn-sm">Записаться</a></div>
+                <div class="schedule-item"><span><strong>Электробезопасность медтехники</strong> (24 ч)</span><span>Старт: 20 июня 2026</span><a href="#contacts" class="btn-sm">Записаться</a></div>
+                <div class="schedule-item"><span><strong>PACS/DICOM и медицинские IT</strong> (40 ч)</span><span>Старт: 25 июня 2026</span><a href="#contacts" class="btn-sm">Записаться</a></div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;"><a href="#contacts" class="btn">Индивидуальный график</a></div>
+        </div>
+    </section>
+
+    <section id="teachers">
+        <div class="container">
+            <h2 class="section-title">Преподаватели</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px;">
+                <div class="teacher-card"><i class="fas fa-user-tie" style="font-size: 3rem; color: var(--accent);"></i><h3>Майрамбекова А.М.</h3><p>к.ф.-м.н., доцент КГТУ</p><p>Физические основы медицинской техники</p></div>
+                <div class="teacher-card"><i class="fas fa-user-md" style="font-size: 3rem; color: var(--accent);"></i><h3>Кудайбердиев О.Б.</h3><p>Соруководитель проекта</p><p>Техническое обслуживание медоборудования</p></div>
+                <div class="teacher-card"><i class="fas fa-microscope" style="font-size: 3rem; color: var(--accent);"></i><h3>Богомолец К.Ю.</h3><p>КГТУ / КГМА</p><p>Клиническая инженерия, анестезиология</p></div>
+                <div class="teacher-card"><i class="fas fa-laptop-code" style="font-size: 3rem; color: var(--accent);"></i><h3>Колодочкина Т.А.</h3><p>Ст. преподаватель</p><p>PACS/DICOM, IT-системы в медицине</p></div>
             </div>
         </div>
     </section>
 
-    <section id="charter">
+    <section id="docs" style="background: var(--light-bg); text-align: center;">
         <div class="container">
-            <div class="charter-section">
-                <h3>Устав Общественного объединения «Ассоциация «Общество биомедицинских инженеров и техников»»</h3>
-                <h4>1. Общие положения</h4>
-                <p><strong>1.1.</strong> Общественное объединение «Ассоциация «Общество биомедицинских инженеров и техников»» (далее — «Ассоциация») является добровольным объединением граждан, созданным на основе их общности интересов для реализации уставных целей и задач.</p>
-                <p><strong>1.7.</strong> Ассоциация не преследует цели извлечения прибыли. Средства, полученные Ассоциацией, используются исключительно для достижения уставных целей и не могут распределяться между ее членами.</p>
-                <p><strong>1.10.</strong> Юридический адрес Ассоциации: Кыргызская Республика, город Бишкек, Ленинский район, ул. Островского, дом 89.</p>
-                <h4>2. Цели и задачи Ассоциации</h4>
-                <ul class="charter-list">
-                    <li>содействие развитию и совершенствованию сферы биомедицинской инженерии и технического сервиса медицинской техники в Кыргызской Республике;</li>
-                    <li>представление и защита прав и законных интересов своих членов в государственных органах и иных организациях.</li>
-                </ul>
-                <h4>3. Права и обязанности членов Ассоциации</h4>
-                <p><strong>3.1.</strong> Членами Ассоциации могут быть дееспособные граждане Кыргызской Республики, признающие настоящий Устав и принимающие участие в ее деятельности.</p>
-                <p><strong>4.3. Членские взносы:</strong> Вступительный взнос — <strong>1000 сомов</strong>. Ежемесячный взнос — <strong>1% от должностного оклада</strong>.</p>
-                <p style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);"><strong>Председатель: Келдибеков Канат Келдибекович</strong></p>
-                <p style="font-size: 0.85rem; color: var(--gray-text);">Утвержден Протоколом общего собрания от 3 марта 2026 г. № 2</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="benefits" style="background: var(--light-bg);">
-        <div class="container">
-            <h2 class="section-title">Преимущества членства</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item"><i class="fas fa-gavel"></i><h4>Представительство интересов</h4><p>Защита интересов биомедицинских инженеров на уровне государственных органов.</p></div>
-                <div class="benefit-item"><i class="fas fa-certificate"></i><h4>Электронное удостоверение</h4><p>Цифровое удостоверение члена ассоциации, подтверждающее статус специалиста.</p></div>
-                <div class="benefit-item"><i class="fas fa-headset"></i><h4>Консультационная поддержка</h4><p>Помощь в вопросах сертификации, закупок, эксплуатации и ремонта медтехники.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="activities">
-        <div class="container">
-            <h2 class="section-title">Направления деятельности</h2>
-            <div class="cards-grid">
-                <div class="card"><i class="fas fa-chalkboard-user"></i><h3>Обучение и повышение квалификации</h3><p>Курсы для инженеров и техников. Скидка до 30% для членов ассоциации.</p></div>
-                <div class="card"><i class="fas fa-certificate"></i><h3>Сертификация специалистов</h3><p>Независимая оценка квалификации биомедицинских инженеров и техников.</p></div>
-                <div class="card"><i class="fas fa-tools"></i><h3>Разработка стандартов ТО</h3><p>Регламенты технического обслуживания, протоколы безопасности, KPI.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- НОВЫЙ БЛОК С КУРСАМИ -->
-    <section id="courses" style="background: var(--light-bg); padding: 80px 0;">
-        <div class="container">
-            <h2 class="section-title">Программы повышения квалификации</h2>
-            <p class="section-subtitle">Для инженеров, техников и специалистов по обслуживанию медицинского оборудования</p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
-                
-                <!-- Модуль 1 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">📡 Лучевая диагностика и радиационная безопасность</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Радиология и дозиметрия</li>
-                        <li style="padding: 6px 0;">✓ Рентгеновское оборудование</li>
-                        <li style="padding: 6px 0;">✓ Магнитно-резонансная томография (МРТ)</li>
-                        <li style="padding: 6px 0;">✓ Компьютерная томография (КТ)</li>
-                        <li style="padding: 6px 0;">✓ Ультразвуковые системы (УЗИ)</li>
-                    </ul>
-                </div>
-
-                <!-- Модуль 2 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">🫀 Жизнеобеспечение и мониторинг</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Анестезиология и реанимационное оборудование (ИВЛ)</li>
-                        <li style="padding: 6px 0;">✓ Системы мониторинга пациентов</li>
-                        <li style="padding: 6px 0;">✓ Дефибрилляторы и кардиовертеры</li>
-                    </ul>
-                </div>
-
-                <!-- Модуль 3 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">🩺 Специализированное медицинское оборудование</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Биомедицинское оборудование</li>
-                        <li style="padding: 6px 0;">✓ Хирургическое оборудование</li>
-                        <li style="padding: 6px 0;">✓ Физиотерапевтическое оборудование</li>
-                        <li style="padding: 6px 0;">✓ Лабораторное оборудование</li>
-                        <li style="padding: 6px 0;">✓ Стерилизационное оборудование</li>
-                    </ul>
-                </div>
-
-                <!-- Модуль 4 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">⚡ Инженерная инфраструктура и стандарты</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Электробезопасность медицинской техники</li>
-                        <li style="padding: 6px 0;">✓ Техническое обслуживание медицинского оборудования</li>
-                        <li style="padding: 6px 0;">✓ Менеджмент и метрология медицинской техники</li>
-                        <li style="padding: 6px 0;">✓ PACS/DICOM и медицинские IT-системы</li>
-                        <li style="padding: 6px 0;">✓ Валидация и верификация медицинского оборудования (IQ/OQ/PQ)</li>
-                    </ul>
-                </div>
-
-                <!-- Модуль 5 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">📋 Управление проектами и нормативная документация</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Проектный менеджмент в сфере медицинской техники</li>
-                        <li style="padding: 6px 0;">✓ Нормативно-правовое регулирование (ГОСТы, ТР ЕАЭС, ISO)</li>
-                        <li style="padding: 6px 0;">✓ Разработка технической и эксплуатационной документации</li>
-                    </ul>
-                </div>
-
-                <!-- Модуль 6 -->
-                <div style="background: white; border-radius: 24px; padding: 24px; border: 1px solid var(--border);">
-                    <h3 style="color: var(--primary); margin-bottom: 16px;">🔧 Базовые и дополнительные компетенции</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 6px 0;">✓ Основы медицинской инженерии</li>
-                        <li style="padding: 6px 0;">✓ Кибербезопасность медицинских изделий</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 48px;">
-                <a href="#contacts" class="btn">Записаться на курс</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="howtojoin" style="background: var(--light-bg);">
-        <div class="container">
-            <h2 class="section-title">Как вступить в ассоциацию</h2>
-            <div class="steps">
-                <div class="step"><div class="step-number">1</div><div>Подайте заявление в Совет Ассоциации</div></div>
-                <div class="step"><div class="step-number">2</div><div>Оплатите вступительный взнос (1000 сомов)</div></div>
-                <div class="step"><div class="step-number">3</div><div>Получите членский билет и электронное удостоверение</div></div>
-            </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="#contacts" class="btn">Подать заявку сейчас</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="partners" style="padding: 50px 0;">
-        <div class="container">
-            <h2 class="section-title">Наши партнёры</h2>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <a href="https://kf.kg/" target="_blank">
-                        <div class="partner-icon"><i class="fas fa-university"></i></div>
-                        <div>ГП "КЫРГЫЗФАРМАЦИЯ"</div>
-                    </a>
-                </div>
-                <div class="partner-card">
-                    <a href="https://kstu.kg/" target="_blank">
-                        <div class="partner-icon"><i class="fas fa-microchip"></i></div>
-                        <div>КГТУ им. И. Раззакова</div>
-                    </a>
-                </div>
-                <div class="partner-card">
-                    <a href="https://www.kgma.kg/ru" target="_blank">
-                        <div class="partner-icon"><i class="fas fa-notes-medical"></i></div>
-                        <div>КГМА им. И. Ахунбаева</div>
-                    </a>
-                </div>
+            <h2 class="section-title">Документ об окончании</h2>
+            <div style="background: white; max-width: 500px; margin: 0 auto; padding: 32px; border-radius: 28px; border: 1px solid var(--border);">
+                <i class="fas fa-certificate" style="font-size: 3rem; color: var(--accent);"></i>
+                <h3>Удостоверение о повышении квалификации</h3>
+                <p>Установленного образца, с печатью и подписью Председателя Ассоциации. Вносится в реестр сертифицированных инженеров КР.</p>
             </div>
         </div>
     </section>
 
     <section id="contacts">
         <div class="container">
-            <h2 class="section-title">Контакты и вступление</h2>
+            <h2 class="section-title">Записаться на курс</h2>
             <div class="contact-grid">
                 <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Кыргызская Республика, г. Бишкек, ул. Островского, 89</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Бишкек, ул. Островского, 89</p>
                     <p><i class="fas fa-phone-alt"></i> +996 709 668 860</p>
                     <p><i class="fas fa-envelope"></i> info@biomedtech.kg</p>
                     <p><i class="fab fa-telegram"></i> t.me/biomedtech_kg</p>
+                    <p><strong>Реквизиты для оплаты:</strong> выставляются после оформления заявки.</p>
                 </div>
                 <div>
                     <form action="#" method="post">
                         <div class="form-group"><input type="text" placeholder="Ваше имя" required></div>
                         <div class="form-group"><input type="email" placeholder="Email" required></div>
                         <div class="form-group"><input type="tel" placeholder="Телефон"></div>
-                        <div class="form-group"><textarea rows="3" placeholder="Должность / Организация / Город"></textarea></div>
+                        <div class="form-group"><select style="width: 100%; padding: 12px 16px; border-radius: 32px;">
+                            <option>Выберите курс</option>
+                            <option>Радиология и дозиметрия (40 ч / 12500 сом)</option>
+                            <option>Анестезиология и реанимационное оборудование (72 ч / 18900 сом)</option>
+                            <option>Электробезопасность медтехники (24 ч / 7800 сом)</option>
+                        </select></div>
                         <button type="submit" class="btn" style="width: 100%;">Отправить заявку</button>
                     </form>
                 </div>
@@ -706,32 +298,59 @@
 <footer>
     <div class="container">
         <p>© 2025 ОО Ассоциация «БИОМЕДТЕК» — Общество биомедицинских инженеров и техников Кыргызстана</p>
-        <p>Свидетельство о регистрации № 216067-3301-00 от 24.03.2023</p>
+        <p>Свидетельство № 216067-3301-00 от 24.03.2023 | Лицензия на образовательную деятельность № 85.59.0</p>
     </div>
 </footer>
 
 <script>
+    // Мобильное меню
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-    });
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === "#") return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-                if (navLinks.classList.contains('show')) navLinks.classList.remove('show');
-            }
+    mobileBtn.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+    // База курсов
+    const coursesData = [
+        { name: "Радиология и дозиметрия", hours: 40, price: 12500, category: "diagnostics", desc: "Рентген, дозиметрический контроль, радиационная безопасность." },
+        { name: "Рентгеновское оборудование", hours: 40, price: 12500, category: "diagnostics", desc: "Эксплуатация, сервис, контроль качества." },
+        { name: "Магнитно-резонансная томография (МРТ)", hours: 64, price: 16800, category: "diagnostics", desc: "Техобслуживание, безопасность МРТ." },
+        { name: "Компьютерная томография (КТ)", hours: 64, price: 16800, category: "diagnostics", desc: "Калибровка, диагностика неисправностей." },
+        { name: "Ультразвуковые системы (УЗИ)", hours: 40, price: 12500, category: "diagnostics", desc: "Настройка, ремонт датчиков, калибровка." },
+        { name: "Анестезиология и реанимационное оборудование (ИВЛ)", hours: 72, price: 18900, category: "life", desc: "Наркозные аппараты, ИВЛ, тестирование." },
+        { name: "Системы мониторинга пациентов", hours: 40, price: 11200, category: "life", desc: "Параметры, передача данных, калибровка." },
+        { name: "Дефибрилляторы и кардиовертеры", hours: 24, price: 7800, category: "life", desc: "Сервис, тестирование разряда." },
+        { name: "Электробезопасность медицинской техники", hours: 24, price: 7800, category: "engineering", desc: "Измерение заземления, токов утечки, УЗО." },
+        { name: "Техническое обслуживание медицинского оборудования", hours: 40, price: 12500, category: "engineering", desc: "Регламенты, KPI, CMMS." },
+        { name: "Менеджмент и метрология медтехники", hours: 40, price: 12500, category: "engineering", desc: "Калибровка, поверка, стандартизация." },
+        { name: "Валидация и верификация (IQ/OQ/PQ)", hours: 40, price: 13500, category: "engineering", desc: "Протоколы квалификации." },
+        { name: "PACS/DICOM и медицинские IT-системы", hours: 40, price: 13500, category: "it", desc: "Интеграция, администрирование." },
+        { name: "Кибербезопасность медицинских изделий", hours: 24, price: 8900, category: "it", desc: "Защита данных, безопасность пациентов." }
+    ];
+
+    function renderCourses(filter = "all") {
+        const container = document.getElementById("coursesContainer");
+        if (!container) return;
+        const filtered = filter === "all" ? coursesData : coursesData.filter(c => c.category === filter);
+        container.innerHTML = filtered.map(c => `
+            <div class="course-card">
+                <h3>${c.name}</h3>
+                <div class="hours">${c.hours} часа(ов)</div>
+                <p>${c.desc}</p>
+                <div class="price">${c.price.toLocaleString()} сом</div>
+                <a href="#contacts" class="btn-sm">Записаться</a>
+            </div>
+        `).join("");
+    }
+
+    // Фильтры
+    const btns = document.querySelectorAll(".filter-btn");
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            btns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderCourses(btn.getAttribute("data-filter"));
         });
     });
-    document.getElementById('showCertificateBtn')?.addEventListener('click', function(e) {
-        e.preventDefault();
-        alert("Свидетельство о регистрации № 216067-3301-00 от 24.03.2023. Юридический адрес: г. Бишкек, ул. Островского, 89. Руководитель: Келдибеков Канат Келдибекович.");
-    });
+    renderCourses("all");
 </script>
 </body>
 </html>
